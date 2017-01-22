@@ -1,0 +1,14 @@
+extends layout
+
+block content
+	form(method="post" action="/contactus")
+		input(type="text" name="fullName" placeholder="full Name")
+		br
+		select(name="suggestion")
+			option(value="suggestion") Suggestion
+			option(value="complaint") Complaint
+		br
+		textarea(name="message" placeholder="Your message")
+		input(type="hidden" name="_csrf" value="#{csrftoken}")
+		br
+		button(type="submit" value="submit") Submit
